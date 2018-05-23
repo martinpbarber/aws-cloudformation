@@ -5,8 +5,8 @@ install:
 - pip install yamllint
 - pip install --upgrade awscli
 script:
-- yamllint cloudformation-bucket.yml
-- aws cloudformation validate-template --template-body file://CloudFormation-Bucket.yml
+- yamllint cloudformation/CloudFormation-Bucket.yml
+- aws cloudformation validate-template --template-body file://cloudformation/CloudFormation-Bucket.yml
 env:
   global:
   - secure: O19/bDMWNfQNOIHEViSCtV5V+QHcJsdt5kOYdSkYEsM5/ca++bgQSKIubDMMVmLBUI5MzG1Du2RO6vu8XSFb8gLocFMpG3FlQQYOadwx+2mgdZGcUPd0gi/5AmpfK44d53kcnzWXBfWvC1IiVmoDV22S+DGFx3FWfJ3FzMZBIMT496vDtPe8W4yAau5pBVpIbqLApKzn7a0gh6nRsKjq96+KPdL01Yhoc8/Bt3T9AWCdL3n7d+oucHhm8oZrqH/VOfoHhEk3OVNvUdiD+GaZjJ2YGBjmZdj1ox07GQKg1re9FN14bLnEh+2PKbVEOqwLmwSbJJHQSfWy9Y8BoVHD3uGEw/2pRY8ZIkhz/VPNguZxOKqpUKxMwukJzPthVGJSHV3aTyjfAI9UywvaznnUFC5+fSqbIor8SnoLAt58g1D2O9qH+N24ch9yVdYAS4ge46jKs4AnC61DGEidI91zZzNJqT4IMfqRYR/2Kbp8XCbIGgkpAeFnpML31DuueubbGqUSyIZMOKhgr5vzLTi38TNtLNoAQMdv0FlJwo0BbLzcRespvVQbS2DbovM9k9butx6h+EF3SCiywhE7FgPUv9TwOKU37lw8G1nd19Q6/r8LhvH8be1RS6hj6w1nvtLLueqvNtB9fqbFc5+oZ2d2+7Z8+MMrUFQRprUirp8Xr/k=
