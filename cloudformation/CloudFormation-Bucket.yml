@@ -1,36 +1,25 @@
 ---
-AWSTemplateFormatVersion: "2010-09-09"
+AWSTemplateFormatVersion: '2010-09-09'
 
 Description: >-
   Create a central S3 bucket for CloudFormation
 
-Metadata:
-  AWS::CloudFormation::Interface:
-    ParameterGroups:
-      - Label:
-          default: "CloudFormation Resource Configuration"
-        Parameters:
-          - BucketName
-    ParameterLabels:
-      BucketName:
-        default: "S3 Bucket Name"
-
 Parameters:
   BucketName:
     Type: String
-    Description: Enter the name of the S3 bucket to be created
-    AllowedPattern: ^[-A-Za-z0-9]+$
+    Description: Enter S3 bucket name
+    AllowedPattern: ^[-a-zA-Z0-9]$
 
 Resources:
   Bucket:
-    Type: "AWS::S3::Bucket"
+    Type: AWS::S3::Bucket
     Properties:
       VersioningConfiguration:
         Status: Enabled
 
 Outputs:
   CloudFormationBucket:
-    Description: Central S3 bucket CloudFormation
+    Description: Central CloudFormation S3 bucket
     Value: !Ref Bucket
     Export:
       Name: CloudFormation-Bucket
