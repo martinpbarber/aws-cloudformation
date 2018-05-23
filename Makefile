@@ -50,3 +50,8 @@ lint: $(TEMPLATES)
 .PHONY: validate
 validate: $(TEMPLATES)
 	$(foreach FILE, $^, $(AWS) cloudformation --region $(REGION) validate-template --template-body file://$(FILE);)
+
+# Clean the workspace
+.PHONY: clean
+clean:
+	-rm -rf $(VENV_DIR)
