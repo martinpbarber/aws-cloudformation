@@ -8,7 +8,7 @@ Parameters:
   BucketName:
     Type: String
     Description: Enter S3 bucket name
-    AllowedPattern: ^[-a-zA-Z0-9]+$
+    AllowedPattern: ^[a-z0-9][-a-z0-9]{1,61}[a-z0-9]$
 
 Resources:
   Bucket:
